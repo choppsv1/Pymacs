@@ -9,7 +9,8 @@ except ImportError:
     from configparser import RawConfigParser
 
 if 'FROM_MAKE' not in os.environ and len(sys.argv) > 1 and \
-   (sys.argv[1].startswith("build") or sys.argv[1].startswith("install")):
+   (sys.argv[1].startswith("build") or sys.argv[1].startswith("install")
+    or sys.argv[1].startswith("egg_info")):
     pkgdir = os.path.abspath(os.path.dirname(__file__))
     os.system("cd {} && make prepare".format(pkgdir))
 
