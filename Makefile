@@ -4,9 +4,10 @@
 
 EMACS = emacs
 PYTHON = python
+#PYTHON = pypy
 RST2LATEX = rst2latex
 
-PYSETUP = $(PYTHON) setup.py
+PYSETUP = env FROM_MAKE=1 $(PYTHON) setup.py
 PPPP = $(PYTHON) pppp -C ppppconfig.py
 
 all pregithub: prepare
